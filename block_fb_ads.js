@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  fuck off ads
 // @author       You
-// @match        https://www.facebook.com
+// @match        https://www.facebook.com/*
 // @grant        none
 // ==/UserScript==
 
