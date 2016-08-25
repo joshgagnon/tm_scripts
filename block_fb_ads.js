@@ -2,7 +2,7 @@
 // @name         Block FB Ads es5
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  fuck off ads
+// @description  try to take over the world!
 // @author       You
 // @match        https://www.facebook.com/*
 // @grant        none
@@ -13,7 +13,7 @@
     function clearAds() {
         [].slice.call(document.querySelectorAll('.userContentWrapper>div>div'))
             .filter(function(el){return el.textContent==='Suggested Post';})
-            .map(function(el){return el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);});
+            .map(function(el){return el.parentNode.parentNode.parentNode.style.display="none";});
 
     }
     var target = document.querySelector('#stream_pagelet>div:last-child');
