@@ -30,11 +30,11 @@
 
         [].slice.call(document.querySelectorAll('.uiStreamSponsoredLink'))
           .map(function(el){
-              ancestor(el, 10).style.display="none";
+              ancestor(el, 12).style.display="none";
         });
 
     }
-    var target = document.querySelector('#stream_pagelet>div:last-child');
+    var target = document.body;
     var observer = new MutationObserver(function(){clearAds();});
     observer.observe(target,  {  childList: true, subtree: true });
 })();
