@@ -24,17 +24,22 @@
             if (callNow) func.apply(context, args);
         };
     };
-    
+
     var replacements = [[new RegExp('Trudeau', "g"), 'Tru-dope']];
-    
+
     function replace() {
-        var start = document.body.innerHTML;
+        var str = document.body.innerHTML, hit=false;
         replacements.map(function(pair){
-            start = start.replace(pair[0], pair[1]);
+            if(str.search(pair[0]) >= 0){
+                hit = true;
+                str = str.replace(pair[0], pair[1]);
+            }
         });
-        document.body.innerHTML = start;
+        if(hit){
+            document.body.innerHTML = str;
+        }
     }
-    
+
     var limitedReplace = debounce(replace, 500, true);
 
     var observer = new MutationObserver(function(){ limitedReplace(); });
